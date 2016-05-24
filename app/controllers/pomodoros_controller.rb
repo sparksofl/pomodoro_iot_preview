@@ -1,6 +1,6 @@
 class PomodorosController < ApplicationController
   before_action :set_pomodoro, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: :create
+  before_action :authenticate_user!, except: [:create, :index]
 
   # GET /pomodoros
   # GET /pomodoros.json
