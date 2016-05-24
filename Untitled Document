@@ -1,0 +1,14 @@
+require 'net/http'
+require 'json'
+
+token = '7evesYv3dp9jQ2ujCCbmWmfc'
+puts 'Emulation'
+while true do
+  print 'Enter timer duration: '
+  duration = gets.chomp.to_i
+  uri = URI('http://localhost:4000/pomodoros/')
+  params = {'duration' => duration, 'task_id' => nil, 'token' => token}
+  res = Net::HTTP.post_form(uri, params)
+  sleep duration
+  puts
+end

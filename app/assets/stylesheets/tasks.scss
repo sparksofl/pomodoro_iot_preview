@@ -1,0 +1,11 @@
+// Place all the styles related to the tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.current_task {
+  background: rgba(0, 252, 5, 0.23);
+}
+
+.current_task td {
+  padding: 15px;
+}

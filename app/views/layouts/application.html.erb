@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CourseWork</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+  </head>
+
+  <body>
+  <% if current_user %>
+    <nav>
+      <ul class="right hide-on-med-and-down">
+        <li><%= link_to current_user.username, user_path(current_user) %></li>
+        <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+      </ul>
+      <ul class="left hide-on-med-and-down">
+        <li><%= link_to 'My timers', timers_path %></li>
+        <li><%= link_to 'My tasks', tasks_path %></li>
+        <li><%= link_to 'My pomodoros', pomodoros_path %></li>
+      </ul>
+      <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+    </nav>
+  <% end %>
+    <div class='wrapper'>
+      <%= yield %>
+    </div>
+  </body>
+  <script type="text/javascript">
+    $(document).onload(function() {
+      window.location.href=window.location.href;
+    })
+  </script>
+</html>
